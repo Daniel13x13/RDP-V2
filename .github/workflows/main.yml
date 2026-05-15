@@ -1,4 +1,4 @@
-name: RDP
+name: RDPV2
 
 on:
   workflow_dispatch:
@@ -30,7 +30,7 @@ jobs:
           Restart-Service -Name TermService -Force
 
       - name: Create RDP User with Secure Password
-        run: |
+        run: | 
           Add-Type -AssemblyName System.Security
           $charSet = @{
               Upper   = [char[]](65..90)      # A-Z
